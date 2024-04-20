@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Student Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #1E0342; /* Dark blue */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0E46A3; /* Medium blue */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #9AC8CD; /* Light blue */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #1E0342; /* Dark blue */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Creative CSS */
+
+        #hero-section {
+            background-image: url('business-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #hero-section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        #hero-section p {
+            font-size: 18px;
+        }
+
+        .about-img {
+            width: 200px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Business Journey</h1>
+    </header>
+    <nav>
+        <a href="#about"><i class="fas fa-user icon"></i>About Me</a>
+        <a href="#education"><i class="fas fa-graduation-cap icon"></i>Education</a>
+        <a href="#skills"><i class="fas fa-chart-bar icon"></i>Skills</a>
+        <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
+        <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
+    </nav>
+    <main>
+        <section id="hero-section">
+            <div class="hero-content">
+                <img src="business-passion.jpg" alt="Business Passion" class="about-img">
+                <h1>Passionate about the Business World</h1>
+                <p>Exploring opportunities, creating value, and driving innovation!</p>
+            </div>
+        </section>
+        <section id="about">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I am a passionate business student eager to learn and contribute to the business world.</p>
+            </div>
+        </section>
+        <section id="education">
+            <div class="about-text">
+                <h2>Education</h2>
+                <p>I am currently pursuing a degree in Business Administration at XYZ University.</p>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="about-text">
+                <h2>Skills</h2>
+                <ul>
+                    <li><i class="fas fa-check icon"></i>Financial Analysis</li>
+                    <li><i class="fas fa-check icon"></i>Market Research</li>
+                    <li><i class="fas fa-check icon"></i>Business Strategy</li>
+                    <li><i class="fas fa-check icon"></i>Communication</li>
+                    <li><i class="fas fa-check icon"></i>Teamwork</li>
+                </ul>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="about-text">
+                <h2>Projects</h2>
+                <p>Here are some of the projects I've worked on:</p>
+                <ul>
+                    <li>Market Analysis for XYZ Company</li>
+                    <li>Business Plan for Startup ABC</li>
+                    <li>Financial Modeling for Project XYZ</li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="about-text">
+                <h2>Contact Me</h2>
+                <p>You can reach me via email at <a href="mailto:albchgstn@gmail.com">albchgstn@gmail.com</a>.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Business Student</p>
+    </footer>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Financial Analysis', 'Market Research', 'Business Strategy', 'Communication', 'Teamwork'],
+                datasets: [{
+                    label: 'Skill Levels',
+                    data: [90, 85, 80, 95, 85],
+                    backgroundColor: [
+                        'rgba(30, 3, 66, 0.6)',
